@@ -10,6 +10,7 @@
   --footer-contacts-color: rgba(255, 255, 255, 0.6);
   --border-second-color: #e5e5e5;
   --icons-color: #afb1b8;
+  --transition-dur-cub:250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 body {
   color: var(--primary-text-color);
@@ -106,7 +107,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-cub);
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -145,7 +146,7 @@ img {
   line-height: 1.43;
   letter-spacing: 0.02em;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-cub);
 }
 .contact-link:hover,
 .contact-link:focus {
@@ -247,22 +248,24 @@ img {
 }
 .work-overlay{
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   bottom:0;
   left:0;
+
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height:70px;
+
   background-color: rgba(47, 48, 58, 0.8);
-}
-.work-overlay-text{
-font-weight: 700;
-font-size: 14px;
-line-height: 1.14;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-color: var(--primary-white-color);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
 }
 .work-list {
   display: flex;
@@ -318,8 +321,8 @@ color: var(--primary-white-color);
 
   color: var(--icons-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-cub),
+    background-color var(--transition-dur-cub);
 }
 .team-icon-link:hover,
 .team-icon-link:focus {
@@ -359,8 +362,8 @@ color: var(--primary-white-color);
 
   color: var(--icons-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-cub),
+    border-color var(--transition-dur-cub);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -392,8 +395,8 @@ color: var(--primary-white-color);
   letter-spacing: 0.06em;
   cursor: pointer;
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-dur-cub),
+    background-color var(--transition-dur-cub);
 }
 .button:hover {
   background-color: #188ce8;
@@ -422,9 +425,9 @@ color: var(--primary-white-color);
   letter-spacing: 0.03em;
   cursor: pointer;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-cub),
+    background-color var(--transition-dur-cub),
+    box-shadow var(--transition-dur-cub);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -463,7 +466,7 @@ color: var(--primary-white-color);
 .project-link {
   display: block;
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-dur-cub);
 }
 .project-link:hover,
 .project-link:focus {
@@ -498,12 +501,8 @@ color: var(--primary-white-color);
   transform: translateY(100%);
 
   background-color: rgba(33, 150, 243, 0.9);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.project-link:hover .project-overlay{
-  transform: translateY(0);
-}
-.project-overlay-text{
+  transition: transform var(--transition-dur-cub);
+
   padding: 63px 24px;
   font-weight: 400;
   font-size: 18px;
@@ -511,6 +510,11 @@ color: var(--primary-white-color);
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
 }
+.project-link:hover .project-overlay,
+.project-link:focus .project-overlay{
+  transform: translateY(0);
+}
+
 /* FOOTER COLORS */
 .footer-section {
   background-color: var(--bg-accent-color);
@@ -533,7 +537,7 @@ color: var(--primary-white-color);
   font-size: 14px;
   line-height: 1.71;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-cub);
 }
 .address-text:hover,
 .address-text:focus {
@@ -546,7 +550,7 @@ color: var(--primary-white-color);
   font-size: 14px;
   line-height: 1.71;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-cub);
 }
 .footer-contact:hover,
 .footer-contact:focus {
@@ -587,7 +591,7 @@ color: var(--primary-white-color);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-dur-cub);
 }
 .footer-icon-link:hover,
 .footer-icon-link:focus {
@@ -601,22 +605,20 @@ color: var(--primary-white-color);
   position: fixed;
   left: 0;
   top:0;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   height: 100%;
+  opacity:1;
 
   background-color:rgba(0, 0, 0, 0.2);
 
-  opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--transition-dur-cub), 
+  visibility var(--transition-dur-cub);
 }
 .backdrop.is-hidden{
   opacity: 0;
   pointer-events: none;
-}
-.backdrop.is-hidden .modal{
-  transform: translate(-50%, -50%) scale(0.9);
-  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  visibility:hidden;
 }
 .modal{
   position: absolute;
@@ -624,29 +626,30 @@ color: var(--primary-white-color);
   left:50%;
   width: 528px;
   height: 581px;
-  background-color: var(--primary-white-color);
+  background-color: #ffffff;
   border-radius: 4px;
-  
-  transform: translate(-50%, -50%) scale(1);
-  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transform: translate(-50%, -50%) scale(1);
+   transition: transform var(--transition-dur-cub);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 1px 3px rgba(0, 0, 0, 0.12);
+}
+.backdrop.is-hidden .modal{
+  transform: translate(-50%, -50%) scale(0.9);
 }
 .modal-button{
-  /* position: absolute;
+  position: absolute;
   top: 8px;
-  right:8px; */
-  margin-left: auto;
-  margin-right: 8px;
-  margin-top: 8px;
+  right:8px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 30px;
   height:30px;
+  padding: 0;
   cursor: pointer;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-}
-.modal-button-icon{
-  fill: currentColor;
 }
